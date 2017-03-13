@@ -272,7 +272,7 @@ func (dmp *DiffMatchPatch) PatchApply(patches []Patch, text string) (string, []b
 		} else {
 			// Found a match.  :)
 			results[x] = true
-			delta = startLoc - expectedLoc
+			delta = startLoc - aPatch.start2
 			var text2 string
 			if endLoc == -1 {
 				text2 = text[startLoc:int(math.Min(float64(startLoc+len(text1)), float64(len(text))))]
